@@ -1,13 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../user';
+import { Repositories} from'../repositories';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-user-github',
-  templateUrl: './user-github.component.html',
-  styleUrls: ['./user-github.component.css']
+  selector: 'app-github-user',
+  templateUrl: './github-user.component.html',
+  styleUrls: ['./github-user.component.css']
 })
-export class UserGithubComponent implements OnInit {
+export class GithubUserComponent implements OnInit {
 
-  constructor() { }
+  user:User;
+  arrayRepo: Repositories;
+
+  constructor(private http:HttpClient) {
+    this.user= new User( "",0,0,0,"","");
+    this.arrayRepo = new Repositories("","","");
+   }
 
   ngOnInit() {
   }
